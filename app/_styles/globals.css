@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .spinner {
+    margin: 3.2rem auto 1.6rem;
+    width: 60px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid theme("colors.primary.900");
+    border-right-color: theme("colors.primary.200");
+    animation: rotate 1s infinite linear;
+  }
+
+  .spinner-mini {
+    margin: 0;
+    width: 20px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 2px solid theme("colors.primary.200");
+    border-right-color: transparent;
+    animation: rotate 1s infinite linear;
+  }
+
+  @keyframes rotate {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+}
+
+/* For data picker */
+
+.rdp {
+  --rdp-cell-size: 32px !important;
+  --rdp-accent-color: theme("colors.accent.500") !important;
+  --rdp-background-color: theme("colors.accent.600") !important;
+  margin: 0 !important;
+}
+
+.booking-calendar .rdp-months {
+  gap: 2rem;
+}
+
+.booking-calendar {
+  --rdp-accent-color: theme("colors.accent.500");
+  --rdp-accent-background-color: theme("colors.accent.900");
+  --rdp-range_middle-background-color: theme("colors.accent.900");
+  --rdp-range_middle-color: theme("colors.primary.100");
+  --rdp-range_start-color: theme("colors.primary.900");
+  --rdp-range_start-date-background-color: theme("colors.accent.500");
+  --rdp-range_end-color: theme("colors.primary.900");
+  --rdp-range_end-date-background-color: theme("colors.accent.500");
+}
+
+.booking-calendar .rdp-caption_label,
+.booking-calendar .rdp-dropdown {
+  color: theme("colors.primary.100");
+  font-weight: 600;
+}
+
+.booking-calendar .rdp-dropdown {
+  background: theme("colors.primary.900");
+  border: 1px solid theme("colors.primary.700");
+  border-radius: 0.25rem;
+  padding: 0.35rem 1.75rem 0.35rem 0.5rem;
+}
+
+.booking-calendar .rdp-head_cell {
+  color: theme("colors.primary.400");
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.booking-calendar .rdp-day {
+  color: theme("colors.primary.200");
+  border-radius: 0.25rem;
+}
+
+.booking-calendar .rdp-day:hover:not([disabled]) {
+  background: theme("colors.primary.800");
+}
+
+.booking-calendar .rdp-selected .rdp-day_button {
+  background: theme("colors.accent.500");
+  border-color: theme("colors.accent.300");
+  color: theme("colors.primary.900");
+  font-weight: 700;
+}
+
+.booking-calendar .rdp-range_middle {
+  background: theme("colors.accent.900");
+  color: theme("colors.primary.100");
+}
+
+.booking-calendar .rdp-button:hover:not([disabled]):not(.rdp-selected) {
+  background: theme("colors.primary.800");
+}
